@@ -1,0 +1,5 @@
+<ul class="coins">
+  <li *ngFor="let coin of coins">
+    <span class="badge">{{coin.id}}</span> {{coin.symbol}} - {{coin.price_usd | currency }}
+  </li>
+</ul>
