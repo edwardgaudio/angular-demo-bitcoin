@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+@import './variables';
+@import './mixins';
+
+body {
+    height: 100%;
+    width: 100%;
+    font-family: $font-stack; 
+    font-weight: 300;
+    color:$font-color;
+    background-color:$primary-color;
+}
