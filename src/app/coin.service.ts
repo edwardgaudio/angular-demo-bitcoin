@@ -15,15 +15,22 @@ const httpOptions = {
 export class CoinService {
 
   private coinsUrl = 'https://api.coinmarketcap.com/v1/ticker/';  // URL to web api
-
+  private cachedCoins: Coin[];
   constructor(private http: HttpClient) { }
 
   getCoins (): Observable<Coin[]> {
     return this.http.get<Coin[]>(this.coinsUrl)
       .pipe(
-        tap(coins => this.log(`fetched coins ${coins.length} of them`)),
+        tap(coins => {
+          this.log(`fetched coins ${coins.length} of them`);
+          this.cachedCoins = coins;
+        }),
         catchError(this.handleError('getCoins', []))
       );
+  }
+
+  getCoin(symbol: string): Observable<Coin> {
+    return of(this.cachedCoins.find(coin => coin.symbol === symbol));
   }
 
   /**

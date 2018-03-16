@@ -1,10 +1,17 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { NgModule }             from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+
+import { CoinListComponent }  from './coin-list/coin-list.component';
+import { CoinDetailComponent } from './coin-detail/coin-detail.component';
+
+const routes: Routes = [
+  { path: '', redirectTo: '/coins', pathMatch: 'full' },
+  { path: 'coins', component: CoinListComponent },
+  { path: 'detail/:symbol', component: CoinDetailComponent },
+];
 
 @NgModule({
-  imports: [
-    CommonModule
-  ],
-  declarations: []
+  imports: [ RouterModule.forRoot(routes) ],
+  exports: [ RouterModule ]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -1,0 +1,10 @@
+<div *ngIf="coin">
+    <h2>{{ coin.name | uppercase }} Details</h2>
+    <div>
+      <span>id: </span>{{coin.id}} <br />
+      <span>price: </span>{{coin.price_usd | currency}} <br /> 
+      <span>Percent change 24hr: </span>{{coin.percent_change_24h }}%
+    </div>
+
+    <button (click)="goBack()">go back</button>
+  </div>

@@ -7,12 +7,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { CoinListComponent } from './coin-list/coin-list.component';
 import { CoinService } from './coin.service';
+import { CoinDetailComponent } from './coin-detail/coin-detail.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    CoinListComponent
+    CoinListComponent,
+    CoinDetailComponent
   ],
   imports: [
     BrowserModule,
