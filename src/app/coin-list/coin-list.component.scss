@@ -1,0 +1,11 @@
+.coins-list {
+    list-style: none;
+    width: 80%;
+}
+
+.coins-list__row {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #fff;
+    padding:5px;
+}
