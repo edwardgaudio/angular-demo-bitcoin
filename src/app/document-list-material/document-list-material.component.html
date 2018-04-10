@@ -1,0 +1,50 @@
+<app-search-form></app-search-form>
+<div class="list-container">
+    <mat-table #table [dataSource]="dataSource">
+    
+      <ng-container matColumnDef="account" >
+        <mat-header-cell *matHeaderCellDef> Account </mat-header-cell>
+        <mat-cell *matCellDef="let element" >
+          <div  class="no-phone">
+              {{element.account}}  
+          </div> 
+          <div  class="phone-only">
+             <span class="mat-cell__txt mat-cell__txt--em">{{element.itemId}}</span>
+             <span class="mat-cell__txt">
+               Desc: {{element.description}} /
+               Category: {{element.category}}
+              </span>
+              <span class="mat-cell__txt">Account#:{{element.account}}</span>
+          </div>  
+        </mat-cell>
+      </ng-container>
+      
+
+      <ng-container matColumnDef="reportDate">
+        <mat-header-cell *matHeaderCellDef> Report Date </mat-header-cell>
+        <mat-cell class="mat-cell--align-right" *matCellDef="let element"> 
+            <span class="mat-cell__txt mat-cell__txt--em">
+              {{element.reportDate}} 
+            </span>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="totalQuantity">
+        <mat-header-cell *matHeaderCellDef> Quantity </mat-header-cell>
+        <mat-cell *matCellDef="let element" class="no-phone"> {{element.totalQuantity}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="totalAmount">
+        <mat-header-cell *matHeaderCellDef> Total Amount </mat-header-cell>
+        <mat-cell *matCellDef="let element" class="no-phone" > {{element.totalAmount}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="itemId">
+        <mat-header-cell *matHeaderCellDef> Item Id </mat-header-cell>
+        <mat-cell *matCellDef="let element" class="no-phone" > {{element.itemId}} </mat-cell>
+      </ng-container>
+  
+      <mat-header-row class="no-phone" *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;" routerLink="/detail/{{row.itemId}}"(click)="click(row)"></mat-row>
+    </mat-table>
+  </div>

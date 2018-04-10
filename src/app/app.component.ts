@@ -14,7 +14,7 @@ import {
   animations: [
     trigger('state', [
       state('small', style({
-        fontSize: '16px',
+        fontSize: '20px',
       })),
       state('large',   style({
         fontSize: '26px',
@@ -25,7 +25,7 @@ import {
   ]
 })
 export class AppComponent {
-  title = 'crypto';
+  title = 'Broadridge Financial';
   state = 'small';
 
   toggleState() {

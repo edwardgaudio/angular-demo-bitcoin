@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { HttpClientModule }    from '@angular/common/http';
 import { AppRoutingModule }     from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -12,19 +12,26 @@ import {
   MatInputModule,
   MatDatepicker, 
   MatDatepickerModule,
-  MatNativeDateModule
+  MatNativeDateModule,
+  MatTableModule
 } from '@angular/material';
 
-import { CoinListComponent } from './coin-list/coin-list.component';
+import { DocumentListComponent } from './document-list/document-list.component';
+
+import { DocumentListMatComponent } from './document-list-material/document-list-material.component';
 import { CoinService } from './coin.service';
-import { CoinDetailComponent } from './coin-detail/coin-detail.component';
+import { DocumentDetailComponent } from './document-detail/document-detail.component';
+import { SearchFormComponent } from './search-form/search-form.component';
+import { DocumentService } from './document.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    CoinListComponent,
-    CoinDetailComponent
+    DocumentListComponent,
+    DocumentListMatComponent,
+    DocumentDetailComponent,
+    SearchFormComponent
   ],
   imports: [
     BrowserModule,
@@ -37,9 +44,11 @@ import { CoinDetailComponent } from './coin-detail/coin-detail.component';
     MatFormFieldModule,
     MatInputModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatTableModule
   ],
-  providers: [CoinService],
-  bootstrap: [AppComponent]
+  providers: [CoinService, DocumentService],
+  bootstrap: [AppComponent],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule { }

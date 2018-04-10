@@ -1,13 +1,17 @@
 import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { CoinListComponent }  from './coin-list/coin-list.component';
-import { CoinDetailComponent } from './coin-detail/coin-detail.component';
+import { DocumentListComponent }  from './document-list/document-list.component';
+import { DocumentDetailComponent } from './document-detail/document-detail.component';
+
+import { DocumentListMatComponent }  from './document-list-material/document-list-material.component';
+// import { DocumentDetailMatComponent } from './document-detail/document-detail.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/coins', pathMatch: 'full' },
-  { path: 'coins', component: CoinListComponent },
-  { path: 'detail/:symbol', component: CoinDetailComponent },
+  { path: '', redirectTo: '/documents', pathMatch: 'full' },
+  { path: 'documents', component: DocumentListComponent },
+  { path: 'detail/:itemId', component: DocumentDetailComponent },
+  { path: 'documents-mat', component: DocumentListMatComponent },
 ];
 
 @NgModule({

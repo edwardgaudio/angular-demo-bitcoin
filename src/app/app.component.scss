@@ -1,10 +1,13 @@
+
+@import '~sass/variables';
+@import '~sass/mixins';
+
 .root {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    padding: 15px;
-}
-
-h1 {
-  font-size: 24px; 
+    width: 96%;
+    margin: 0 2%;
+    @include phone {
+      margin: 0;
+    }
 }

@@ -1,0 +1,18 @@
+<div *ngIf="document">
+  <div class="detail-header">
+    <h2>Details</h2>
+    <button (click)="goBack()" mat-button>go back</button>
+  </div>
+    <div class="detail-meta" >
+      <span>Item id: </span>{{document.itemId}} <br />
+      <span>Account: </span>{{document.account}} <br />
+      <span>Report Date: </span>{{document.reportDate}} <br />
+      <span>State: </span>{{document.state}} <br />
+      <span>Category: </span>{{document.category}} <br />
+      <span>Description: </span>{{document.description}} <br />
+      <span>Total Quantity: </span>{{document.totalQuantity}} <br />
+      <span>Total Amount: </span>{{document.totalAmount | currency}} <br />
+      <span>Content? -- Some content or pdf view here --</span>
+    </div>
+    <img src="../../assets/imgs/example.jpg" />
+  </div>

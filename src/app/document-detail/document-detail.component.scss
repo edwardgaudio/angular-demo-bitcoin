@@ -1,0 +1,16 @@
+h2 {
+    margin:0;
+    padding: 0;
+}
+.detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.detail-meta {
+    margin:4% 0;
+    font-size: 12px;
+    span {
+        font-weight: 800;
+    }
+}

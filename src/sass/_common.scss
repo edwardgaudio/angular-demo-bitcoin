@@ -1,0 +1,10 @@
+@import './variables';
+@import './mixins';
+
+.mat-button {
+    font-weight: 800;
+    text-transform:capitalize;
+    font-size: 12px;
+    background-color:#00A3D6;
+    color:#fff !important;
+}

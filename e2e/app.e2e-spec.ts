@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('bitcoin-mag App', () => {
+describe('Intelligent Information Managment App', () => {
   let page: AppPage;
 
   beforeEach(() => {
@@ -9,6 +9,6 @@ describe('bitcoin-mag App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to app!');
+    expect(page.geth1Text()).toEqual('[document list]');
   });
 });

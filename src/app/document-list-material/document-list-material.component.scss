@@ -1,0 +1,36 @@
+@import '~sass/variables';
+@import '~sass/mixins';
+
+.list-container{
+    @include phone {
+        margin: 0;
+    }
+}
+
+.mat-header-row, .mat-row {
+    padding: 6px;
+}
+
+.mat-cell--align-right{
+    @include phone {    
+        text-align: right;
+    }
+}
+
+.mat-cell__txt {
+    @include phone {
+        display: inline-block;
+        width: 100%;
+        font-size: .8em;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+}
+
+.mat-cell__txt--em {
+    @include phone {
+        font-weight: 800;
+        font-size: 1em;
+    }
+}

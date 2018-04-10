@@ -1,0 +1,17 @@
+<form class="search-form" [formGroup]="searchForm" (ngSubmit)="onSubmit()" >
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Account #" formControlName="account" >
+    </mat-form-field>
+    <mat-form-field class="mat-form-field--half-width">
+      <input matInput [matDatepicker]="fromPicker" placeholder="FROM:" formControlName="fromDate">
+      <mat-datepicker-toggle matSuffix [for]="fromPicker"></mat-datepicker-toggle>
+      <mat-datepicker #fromPicker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field class="mat-form-field--half-width">
+      <input matInput [matDatepicker]="toPicker" placeholder="TO:" [value]="fromPicker.value" formControlName="toDate">
+      <mat-datepicker-toggle matSuffix [for]="toPicker"></mat-datepicker-toggle>
+      <mat-datepicker #toPicker></mat-datepicker>
+    </mat-form-field>
+    <button type="submit" mat-button>Search</button> 
+    <button (click)="reset()" type="button" mat-button>Reset</button> 
+</form>

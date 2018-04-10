@@ -14,7 +14,7 @@ const httpOptions = {
 @Injectable()
 export class CoinService {
 
-  private coinsUrl = 'https://api.coinmarketcap.com/v1/ticker/';  // URL to web api
+  private coinsUrl = 'https://api.coinmarketcap.com/v1/ticker/';
   private cachedCoins: Coin[];
   constructor(private http: HttpClient) { }
 

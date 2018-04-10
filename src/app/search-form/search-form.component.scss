@@ -1,0 +1,24 @@
+@import '~sass/variables';
+@import '~sass/mixins';
+
+.search-form{
+    margin: 0 0 20px 0;
+}
+
+.mat-button {
+    @include phone {
+        width: 49%;
+    }
+}
+
+.mat-form-field{
+    @include phone {
+        width: 100%;
+    }
+}
+
+.mat-form-field--half-width{
+    @include phone {
+        width: 49%;
+    }
+}

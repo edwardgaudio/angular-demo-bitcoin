@@ -1,0 +1,9 @@
+<app-search-form></app-search-form>
+<ul class="coins-list">
+  <li *ngFor="let coin of coins" routerLink="/detail/{{coin.id}}">
+    <div class="coins-list__row" >
+      <div class="badge">{{coin.id}} - {{coin.symbol}}<span *ngIf="coin.id == 'lisk'">***</span></div>
+      <div>{{coin.price_usd | currency }}</div>
+    </div>
+  </li>
+</ul>
